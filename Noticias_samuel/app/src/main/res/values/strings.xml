@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Noticias</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Configurações</string>
+    <string name="title_activity_login">Sign in</string>
+
+
+    <string name="title_activity_full_news">Artigo</string>
+
+    <string name="title_activity_register">Register</string>
+    <string name="title_activity_read_article">Ler artigo</string>
+    <string name="title_activity_categories">Categorias</string>
+</resources>

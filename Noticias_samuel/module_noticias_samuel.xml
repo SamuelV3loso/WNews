@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_noticias_samuel" default="compile.module.noticias_samuel">
+  <dirname property="module.noticias_samuel.basedir" file="${ant.file.module_noticias_samuel}"/>
+  
+  <property name="module.jdk.home.noticias_samuel" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.noticias_samuel" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.noticias_samuel" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.noticias_samuel" value="-encoding UTF-8 -source 1.8 -target 1.8 ${compiler.args}"/>
+  
+  <property name="noticias_samuel.output.dir" value="${module.noticias_samuel.basedir}/classes/production/Noticias_samuel"/>
+  <property name="noticias_samuel.testoutput.dir" value="${module.noticias_samuel.basedir}/classes/test/Noticias_samuel"/>
+  
+  <path id="noticias_samuel.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="noticias_samuel.module.production.classpath">
+    <path refid="${module.jdk.classpath.noticias_samuel}"/>
+  </path>
+  
+  <path id="noticias_samuel.runtime.production.module.classpath">
+    <pathelement location="${noticias_samuel.output.dir}"/>
+  </path>
+  
+  <path id="noticias_samuel.module.classpath">
+    <path refid="${module.jdk.classpath.noticias_samuel}"/>
+    <pathelement location="${noticias_samuel.output.dir}"/>
+  </path>
+  
+  <path id="noticias_samuel.runtime.module.classpath">
+    <pathelement location="${noticias_samuel.testoutput.dir}"/>
+    <pathelement location="${noticias_samuel.output.dir}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.noticias_samuel">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.noticias_samuel">
+    <patternset refid="excluded.from.module.noticias_samuel"/>
+  </patternset>
+  
+  
+  <target name="compile.module.noticias_samuel" depends="compile.module.noticias_samuel.production,compile.module.noticias_samuel.tests" description="Compile module Noticias_samuel"/>
+  
+  <target name="compile.module.noticias_samuel.production" depends="register.custom.compilers" description="Compile module Noticias_samuel; production classes"/>
+  
+  <target name="compile.module.noticias_samuel.tests" depends="register.custom.compilers,compile.module.noticias_samuel.production" description="compile module Noticias_samuel; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.noticias_samuel" description="cleanup module">
+    <delete dir="${noticias_samuel.output.dir}"/>
+    <delete dir="${noticias_samuel.testoutput.dir}"/>
+  </target>
+</project>
